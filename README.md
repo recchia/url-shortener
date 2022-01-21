@@ -2,8 +2,8 @@
 Application for generate short url version from long urls, developed with Symfony 6.0, Api Platform and queues. PostgreSQL as Database and Queue service. You can use Postman or develop a js client to try the app following the api docs.
 
 ### How to
-* To list more frequently accessed urls use: http(s)://{domain}/api/short_urls?page=1&itemsPerPage=100&order%5Bhits%5D=desc
-* To create a new one make a post request to: http(s)://{domain}:8000/api/short_urls with the following payload:
+* To list more frequently accessed urls use: [http(s)://{domain}/api/short_urls?page=1&itemsPerPage=100&order%5Bhits%5D=desc](http(s)://{domain}/api/short_urls?page=1&itemsPerPage=100&order%5Bhits%5D=desc)
+* To create a new one make a post request to: [http(s)://{domain}:8000/api/short_urls](http(s)://{domain}:8000/api/short_urls) with the following payload:
 ```{json}
 {
   "longUrl": "valid_url"
@@ -61,8 +61,8 @@ docker-compose exec php bin/console messenger:consume async
 
 ***8 - Load in browser:***
 
-* http://localhost/api for Api docs (swagger UI)
-* http://localhost/{shortUrlId} to redirect
+* http://{domain}/api for Api docs (swagger UI)
+* http://{domain}/{shortUrlId} to redirect
 
 ###Run Test Suite
 #### Create test database
