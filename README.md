@@ -1,4 +1,4 @@
-# Shortener
+# URL Shortener
 Application for generate short url version from long urls, developed with Symfony 6.0, Api Platform and queues. PostgreSQL as Database and Queue service. You can use Postman or develop a js client to try the app following the api docs.
 
 ### How to
