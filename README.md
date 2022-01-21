@@ -1,5 +1,6 @@
 # URL Shortener
-Application for generate short url version from long urls, developed with Symfony 6.0, Api Platform and queues. PostgreSQL as Database and Queue service. You can use Postman or develop a js client to try the app following the api docs.
+Application for generate short url version from long urls, developed with Symfony 6.0, Api Platform and queues. 
+PostgreSQL as Database and Queue service. You can use Postman or develop a js client to try the app following the api docs.
 
 ### How to
 * To list more frequently accessed urls use: [http(s)://{domain}/api/short_urls?page=1&itemsPerPage=100&order%5Bhits%5D=desc](http(s)://{domain}/api/short_urls?page=1&itemsPerPage=100&order%5Bhits%5D=desc)
