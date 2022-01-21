@@ -65,7 +65,7 @@ docker-compose exec php bin/console messenger:consume async
 * http://{domain}/api for Api docs (swagger UI)
 * http://{domain}/{shortUrlId} to redirect
 
-###Run Test Suite
+### Run Test Suite
 
 #### Create test database
 ```{bash}
