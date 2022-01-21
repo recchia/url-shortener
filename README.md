@@ -70,7 +70,7 @@ docker-compose exec php bin/console messenger:consume async
 ```{bash}
 docker-compose exec php bin/console d:d:c --env=test
 ```
-***6 - Execute Migrations:***
+#### Execute Migrations
 ```{bash}
  docker-compose exec php bin/console d:m:m --env=test
 ```
