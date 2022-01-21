@@ -1,14 +1,32 @@
 version: '3'
 
 services:
+  nginx:
+    image: nginx:alpine
+    container_name: webserver
+    working_dir: /application
+    volumes:
+      - ./:/application
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+
+  php:
+    build:
+      context: ./docker/php
+    container_name: phpengine
+    working_dir: /application
+    volumes:
+      - ./:/application
+
 ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-13}-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
       # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bluecoding}
-      POSTGRES_USER: ${POSTGRES_USER:-bluecoding}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-apppassword}
+      POSTGRES_USER: ${POSTGRES_USER:-appuser}
     volumes:
       - db-data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
