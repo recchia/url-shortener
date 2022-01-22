@@ -25,16 +25,16 @@ class ChallengeService
         }
     }
 
-    public function validateUPC(int $upcNumber): bool
+    public function validateUPC(string $upcNumber): bool
     {
 
         $numberOdd = 0;
         $numberEven = 0;
-        $totalDigits = strlen((string)$upcNumber);
+        $totalDigits = strlen($upcNumber);
 
         for ($i = 1; $i < $totalDigits - 1; $i++) {
             $type = $i % 2 === 0 ? 'even' : 'odd';
-            $digit = substr((string)$upcNumber, $i - 1, 1);
+            $digit = substr($upcNumber, $i - 1, 1);
             if (! is_numeric($digit)) {
                 return false;
             }
@@ -57,9 +57,3 @@ class ChallengeService
     }
 
 }
-
-$service = new ChallengeService();
-/*$service->validateUPC(012345678905);
-$service->validateUPC(01234567a905);
-$service->validateUPC(036000241457);
-$service->validateUPC(01);*/
