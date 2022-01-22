@@ -31,7 +31,6 @@
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
-        <listener class="\DAMA\DoctrineTestBundle\PHPUnit\PHPUnitListener" />
     </listeners>
 
     <!-- Run `composer require symfony/panther` before enabling this extension -->
@@ -40,4 +39,7 @@
         <extension class="Symfony\Component\Panther\ServerExtension" />
     </extensions>
     -->
+    <extensions>
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />
+    </extensions>
 </phpunit>
