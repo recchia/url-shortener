@@ -37,7 +37,7 @@ final class ShortUrlDataPersister implements ContextAwareDataPersisterInterface
      * @throws TransportExceptionInterface
      * @throws ErrorException
      */
-    public function persist($data, array $context = [])
+    public function persist($data, array $context = []): object
     {
         if ($data instanceof ShortUrl && ($context['collection_operation_name'] ?? null) === 'post') {
             $shortUrl = $this->urlShortenerProvider->reduceUrl($data->getLongUrl());
