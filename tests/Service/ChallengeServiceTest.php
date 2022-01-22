@@ -45,30 +45,4 @@ class ChallengeServiceTest extends TestCase
         $this->assertIsArray($result);
         $this->assertEquals($orderedArray, $result);
     }
-
-    public function arraysProvider(): array
-    {
-        return [
-            [
-                [
-                    ['Milk', 1.25, 2],
-                    ['Eggs', 4.99, 1],
-                    ['Granulated sugar', 1.25, 1],
-                    ['Broccoli', 2.34, 3],
-                    ['Chocolate bar', 1.25, 5],
-                    ['Organic All-purpose flour', 4.99, 2],
-                ],
-            ],
-            [
-                [
-                    ['Organic All-purpose flour', 4.99, 2],
-                    ['Eggs', 4.99, 1],
-                    ['Broccoli', 2.34, 3],
-                    ['Chocolate bar', 1.25, 5],
-                    ['Milk', 1.25, 2],
-                    ['Granulated sugar', 1.25, 1],
-                ]
-            ]
-        ];
-    }
 }
