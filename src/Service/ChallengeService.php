@@ -4,25 +4,14 @@ namespace App\Service;
 
 class ChallengeService
 {
-    private array $products = [
-        ['Milk', '1.25', 2],
-        ['Eggs', '4.99', 1],
-        ['Granulated sugar', '1.25', 1],
-        ['Broccoli', '2.34', 3],
-        ['Chocolate bar', '1.25', 5],
-        ['Organic All-purpose flour', '4.99', 2],
-    ];
-
-    public function orderProducts(): array
+    public function orderProducts(array $array): array
     {
-        $auxArray = [];
-        $lenght = count($this->products);
+        $prices = array_column($array, 1);
+        $quantities = array_column($array, 2);
 
-        for ($i = 0; $i < $lenght; $i++) {
-            if ($this->products[$i][2] > $this->products[$i+1]) {
-                $auxArray = $this->products[$i];
-            }
-        }
+        array_multisort($prices, SORT_DESC, $quantities, SORT_DESC, $array);
+
+        return $array;
     }
 
     public function validateUPC(string $upcNumber): bool
