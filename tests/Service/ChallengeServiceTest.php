@@ -7,7 +7,10 @@ use PHPUnit\Framework\TestCase;
 
 class ChallengeServiceTest extends TestCase
 {
-    public function testValidateUPC(): void
+    /**
+     * @test
+     */
+    public function itValidateUpcCode(): void
     {
         $service = new ChallengeService();
 
@@ -18,7 +21,10 @@ class ChallengeServiceTest extends TestCase
         $this->assertTrue($service->validateUPC('010101010105'));
     }
 
-    public function testOrderArray(): void
+    /**
+     * @test
+     */
+    public function itOrderItemsArrayByPriceAndQuantity(): void
     {
         $originalArray = [
             ['Milk', 1.25, 2],

@@ -9,7 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ShortUrlTest extends ApiTestCase
 {
-    public function testShortUrlCollection(): void
+    /**
+     * @test
+     */
+    public function itMustReturnShortUrlCollection(): void
     {
         $response = static::createClient()->request('GET', '/api/short_urls?page=1&itemsPerPage=100&order%5Bhits%5D=desc');
 
@@ -25,7 +28,10 @@ class ShortUrlTest extends ApiTestCase
         $this->assertCount(3, $data['hydra:member']);
     }
 
-    public function testShortUrlItem(): void
+    /**
+     * @test
+     */
+    public function itMustReturnShortUrlItem(): void
     {
         $client = static::createClient();
         $repository = static::getContainer()
@@ -54,7 +60,10 @@ class ShortUrlTest extends ApiTestCase
         }
     }
 
-    public function testShortUrlCreate(): void
+    /**
+     * @test
+     */
+    public function itMustCreateShortUrl(): void
     {
         $url = 'https://www.pierorecchia.com/';
         $options = [
@@ -77,7 +86,10 @@ class ShortUrlTest extends ApiTestCase
         $this->assertSame(0, $data['hits']);
     }
 
-    public function testShortUrlCreateShouldFailWithInvalidUrl(): void
+    /**
+     * @test
+     */
+    public function itMustFailCreatingShortUrlWhenUrlIsInvalid(): void
     {
         $url = 'www.pierorecchia.com/';
         $options = [

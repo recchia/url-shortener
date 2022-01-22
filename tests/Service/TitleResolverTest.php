@@ -9,7 +9,10 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class TitleResolverTest extends TestCase
 {
-    public function testResolveTitle(): void
+    /**
+     * @test
+     */
+    public function itMustResolveTitle(): void
     {
         $title = 'Test Page';
         $content = '<html><head><title>'.$title.'</title></head></html>';
@@ -25,7 +28,10 @@ class TitleResolverTest extends TestCase
         $this->assertSame($title, $titleResolver->resolveTitle($url));
     }
 
-    public function testDefaultTitleWhenNoExist(): void
+    /**
+     * @test
+     */
+    public function itMustResolveDefaultTitleWhenTitleNotExist(): void
     {
         $content = '<html><head></head></html>';
         $url = 'https://www.pierorecchia.com';
